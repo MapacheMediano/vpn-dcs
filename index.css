@@ -1,0 +1,69 @@
+/* ── RESET & TOKENS ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --white: #ffffff;
+  --off-white: #f8f7f4;
+  --ink: #0a0a0a;
+  --ink-60: rgba(10,10,10,.6);
+  --ink-30: rgba(10,10,10,.3);
+  --ink-10: rgba(10,10,10,.08);
+  --purple: #7c3aed;
+  --purple-light: #ede9fe;
+  --orange: #ea580c;
+  --orange-light: #fff7ed;
+  --blue: #2563eb;
+  --blue-light: #eff6ff;
+  --cyan: #0891b2;
+  --cyan-light: #ecfeff;
+  --green: #16a34a;
+  --green-light: #f0fdf4;
+  --pink: #db2777;
+  --pink-light: #fdf2f8;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --nav-h: 64px;
+  --transition: all .3s cubic-bezier(.4,0,.2,1);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--ink);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--ink-30); border-radius: 2px; }
+
+/* ── SHARED ANIMATIONS ─────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes orb-float {
+  0%,100% { transform: translate(0,0) scale(1); }
+  33%      { transform: translate(24px,-18px) scale(1.04); }
+  66%      { transform: translate(-16px,14px) scale(.96); }
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes welcome-pop {
+  from { transform: scale(.4); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+@keyframes bar-fill {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+@keyframes modal-in   { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modal-slide { from { transform: translateY(24px); } to { transform: translateY(0); } }
