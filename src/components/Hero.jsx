@@ -52,8 +52,9 @@ export default function Hero() {
         {/* Title */}
         <h1 style={{
           fontFamily: 'Syne, sans-serif', fontWeight: 800,
-          fontSize: 'clamp(3rem, 7vw, 6.5rem)',
-          lineHeight: 1, letterSpacing: '-2.5px', color: '#0a0a0a',
+          fontSize: 'clamp(2rem, 4.5vw, 4rem)',
+          lineHeight: 1.15, letterSpacing: '-1.5px', color: '#0a0a0a',
+          textAlign: 'center',
           position: 'relative', zIndex: 1, maxWidth: 960,
           animation: 'fade-up .7s .1s ease both',
         }}>
