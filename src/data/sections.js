@@ -13,7 +13,7 @@ export const METRICS = [
 
 export const FEATURES = [
   { icon: '🔐', accent: 'purple', title: 'Cifrado Empresarial',    body: 'Protocolo AES-256-GCM (OpenVPN) y ChaCha20/Poly1305 (WireGuard) con MFA integrado a Active Directory. Reduce el riesgo de intercepción en más del 90%.' },
-  { icon: '🌐', accent: 'orange', title: 'Disponibilidad 24/7',    body: 'Servidor Dell PowerEdge con failover automático, enlace de respaldo 100 Mbps y UPS 30 min. SLA 99.5% en horario laboral (07:00–22:00 hrs).' },
+  { icon: '🌐', accent: 'orange', title: 'Alta Disponibilidad',    body: 'Servidor Dell PowerEdge con failover automático, enlace de respaldo 100 Mbps y UPS 30 min. SLA 99.5% en horario laboral (07:00–22:00 hrs).' },
   { icon: '📊', accent: 'blue',   title: 'COBIT 2019 Governance',  body: 'Alineado a APO09, APO13, DSS01, DSS05 y MEA01. Cascada de metas BSC con perspectivas Financiera, Clientes, Procesos y Aprendizaje.' },
   { icon: '🛡️', accent: 'cyan',   title: 'ISO 27001 Ready',        body: 'Matriz de riesgos CID, análisis de infraestructuras críticas, bitácoras de auditoría y cumplimiento LFPDPPP.' },
   { icon: '♻️', accent: 'green',  title: 'Plan de Continuidad',    body: 'BIA Táctico (3 procesos) y BIA Operacional integrados. RTO máximo 2 horas. Respaldo diario de configuraciones, retención 90 días.' },
