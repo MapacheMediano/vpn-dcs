@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const s = {
   nav: {
@@ -31,7 +32,7 @@ const s = {
     border: 'none', fontFamily: 'DM Sans, sans-serif', transition: 'all .2s',
   },
   hamburger: {
-    display: 'none', flexDirection: 'column', gap: 5,
+    display: 'flex', flexDirection: 'column', gap: 5,
     cursor: 'pointer', padding: 8, border: 'none', background: 'none',
   },
   bar: { width: 22, height: 2, background: '#0a0a0a', borderRadius: 2, display: 'block' },
@@ -49,10 +50,10 @@ const s = {
 }
 
 const NAV_ITEMS = [
-  { label: 'Servicio',    id: 'features'   },
-  { label: 'Proyecto',   id: 'proyecto'   },
-  { label: 'Frameworks', id: 'frameworks' },
-  { label: 'Nosotros',   id: 'nosotros'   },
+  { label: 'Servicio',    id: 'features',   type: 'scroll' },
+  { label: 'Proyecto',   id: 'proyecto',   type: 'scroll' },
+  { label: 'Frameworks', id: 'frameworks', type: 'scroll' },
+  { label: 'Nosotros',   id: 'equipo',     type: 'page'   },
 ]
 
 const goTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -61,14 +62,26 @@ export default function Navbar() {
   const [scrolled, setScrolled]     = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [isMobile, setIsMobile]     = useState(window.innerWidth <= 680)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     const onResize = () => setIsMobile(window.innerWidth <= 680)
     window.addEventListener('scroll', onScroll)
     window.addEventListener('resize', onResize)
-    return () => { window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onResize) }
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onResize)
+    }
   }, [])
+
+  const handleNav = (item) => {
+    if (item.type === 'page') {
+      navigate('/equipo')
+    } else {
+      goTo(item.id)
+    }
+  }
 
   return (
     <>
@@ -81,7 +94,8 @@ export default function Navbar() {
         {!isMobile && (
           <div style={s.links}>
             {NAV_ITEMS.map(item => (
-              <button key={item.id} style={s.link} onClick={() => goTo(item.id)}
+              <button key={item.id} style={s.link}
+                onClick={() => handleNav(item)}
                 onMouseEnter={e => { e.target.style.background='rgba(10,10,10,.08)'; e.target.style.color='#0a0a0a' }}
                 onMouseLeave={e => { e.target.style.background='none'; e.target.style.color='rgba(10,10,10,.6)' }}>
                 {item.label}
@@ -109,7 +123,7 @@ export default function Navbar() {
         <div style={{ ...s.mobileNav, display: 'flex' }}>
           {NAV_ITEMS.map(item => (
             <button key={item.id} style={s.mobileLink}
-              onClick={() => { goTo(item.id); setMobileOpen(false) }}>
+              onClick={() => { handleNav(item); setMobileOpen(false) }}>
               {item.label}
             </button>
           ))}
