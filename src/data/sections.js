@@ -28,6 +28,7 @@ export const SECTIONS = [
   { id:'strategy-2', num:'06', cat:'strategy', catLabel:'COBIT',      title:'Metas IT (BSC)',                desc:'Una meta IT por perspectiva del BSC, derivadas de las metas corporativas mediante la cascada de metas COBIT 2019.',                                          detail:'Mapeo de metas de negocio a metas de alineación y metas de proceso COBIT 2019.',                                                                          pdfFile:'Metas_Corporativas_IT.pdf' },
   { id:'strategy-3', num:'07', cat:'strategy', catLabel:'COBIT',      title:'Cascada de Metas',              desc:'Mapeo de relaciones primarias (P) y secundarias (S) entre metas corporativas e IT según la tabla oficial de cascada COBIT 2019.',                           detail:'Evidencia la trazabilidad desde los objetivos del negocio hasta los procesos operativos de TI.',                                                           pdfFile:'Metas_Corporativas_IT.pdf' },
   { id:'strategy-4', num:'08', cat:'strategy', catLabel:'COBIT',      title:'Mapa Estratégico (BSC)',        desc:'Representación visual del BSC integrando las 4 perspectivas con metas y relaciones de causalidad para VPN DCS.',                                            detail:'Integra metas corporativas e IT mostrando la cadena de valor estratégica.',                                                                                pdfFile:'Metas_Corporativas_IT.pdf' },
+  { id:'strategy-5', num:'08b', cat:'strategy', catLabel:'COBIT', title:'Mapa de Procesos BPMN', desc:'Mapa de procesos del Servicio de VPN Corporativa con diagramas BPMN 2.0 de los 3 procesos clave: Gestión de Accesos, Operación del VPN y Gestión de Seguridad.', detail:'Estructura en 3 bandas: Procesos Estratégicos (Planeación y Evaluación), Procesos Clave (APO09, DSS01, DSS05/APO13) y Procesos de Apoyo (Administración y Soporte).', pdfFile:'DIAGRAMAS_DE_PROCESOS.pdf' },
   { id:'ops-1',      num:'09', cat:'ops',      catLabel:'ITIL',       title:'Caso de Negocio',               desc:'Justificación de la inversión de $426,000 MXN frente a Cisco AnyConnect ($150–$250/usuario/mes) y Fortinet FortiClient ($130–$200/usuario/mes).',           detail:'Nuestro servicio: $80–$120 MXN/usuario/mes con gobernanza COBIT incluida y código abierto OpenVPN/WireGuard.',                                             pdfFile:'ProyectoVPN_ITGovernance.pdf' },
   { id:'ops-2',      num:'10', cat:'ops',      catLabel:'ITIL',       title:'Cédula de Servicio (ITIL)',     desc:'ID: VPN-2026-001 · Cédula bajo ITIL v4 con SLAs, RACI, niveles de soporte OLA. Respuesta críticos ≤1h, resolución ≤4h.',                                   detail:'RACI: Ing. VPN 1 (Kevin) 7:00–15:00, Ing. VPN 2 (Raúl) 15:00–22:00, Arquitecto (Samuel) 9:00–18:00.',                                                   pdfFile:'CEDULA_SERVICIO_COMPLETO.pdf' },
   { id:'ops-3',      num:'11', cat:'ops',      catLabel:'ITIL',       title:'Inventario de Activos',         desc:'Registro de activos de 3 procesos COBIT. Hardware: Dell PowerEdge, Switch Admin, UPS. Software: OpenVPN, WireGuard. Total hardware: $115,000 MXN.',          detail:'Software: $0 (código abierto). Servicios: $50,000 MXN. Incluye 3 computadoras de desarrollo.',                                                            pdfFile:'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-DXckFJ54TZUFASlGw1zq_2XtYdqrq7p0k1af5gmrZpTmurh8nzIYp2EvbhujKQ/pubhtml' },
@@ -40,11 +41,12 @@ export const SECTIONS = [
 ]
 
 export const TABS = [
-  { key: 'all',      label: 'Todos (17)' },
+  { key: 'all',      label: 'Todos (18)' },
   { key: 'identity', label: 'Identidad (4)' },
   { key: 'strategy', label: 'Estrategia (4)' },
   { key: 'ops',      label: 'Gestión ITIL (3)' },
   { key: 'security', label: 'Seguridad (6)' },
+  { key: 'strategy', label: 'Estrategia (5)' },
 ]
 
 export const FRAMEWORKS = [
